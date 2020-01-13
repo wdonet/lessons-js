@@ -1,4 +1,4 @@
-// ES6 introduces symbols
+// ES6 introduces  -- symbols --
 // Unique identifiers
 // - add properties to objects
 // - they are not iterable
