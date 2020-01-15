@@ -23,7 +23,7 @@ tester(new SingletonCreator(), 'function scope');
 
 // With factory function
 const singletoner = () => {
-  let instance = {};
+  const instance = {};
   const getInstance = () => instance;
   return { getInstance };
 }
