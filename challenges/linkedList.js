@@ -5,7 +5,6 @@
  * input two: 2 -> 9 -> 11 -> 14
  * output: 2 -> 3 -> 7 -> 9 -> 11 -> 12 -> 13 -> 14
  */
-// daniel.solis@scalablepress.com
 
 const Node = function (value, next) {
   this.value = value;
