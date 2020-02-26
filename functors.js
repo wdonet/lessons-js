@@ -41,13 +41,13 @@ two
   .map(plusOne)
   .map(trace('Declarative')); // 5
 
-// '+' operator
+// '+' operator (uses fn .valueOf )
 const four = Identity(two + two).map(trace('2+2'));
 Identity( Identity(four / two) * four).map(trace('4/2 * 4'));
 const hi = trace('String concatenation')(Identity('h') + Identity('i'));
 // console.log
 console.log(four.toString());
-// Iterating
+// Iterating (uses => [Symbol.iterator]: function*() { yield value })
 const arr = [3, 4, ...Identity(8)]
 trace('Iterating')(arr);
 

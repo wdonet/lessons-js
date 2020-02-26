@@ -39,3 +39,4 @@ console.log('fnX', obj.fnX());
 console.log('arrowX', obj.arrowX());
 let otherObj = { x: 901 };
 console.log('fnX bound', obj.fnX.bind(otherObj)());
+console.log('arrowX bound', obj.arrowX.bind(otherObj)()); // bind,apply,call are useless with arrow fns
