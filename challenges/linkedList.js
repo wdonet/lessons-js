@@ -39,16 +39,21 @@ const concat = (one, two) => {
   result = new Node(0);
   const rootNode = result;
   while(largest) {
-    if (largest - shortest < 0) {
+    if (!shortest || largest - shortest < 0) {
       result.setNext(largest.clone());
       largest = largest.next;
     }
     else {
       if(shortest) {
-      result.setNext(shortest.clone());
-      shortest = shortest.next;
+        result.setNext(shortest.clone());
+        shortest = shortest.next;
       }
     }
+    result = result.next;
+  }
+  while (shortest) {
+    result.setNext(shortest.clone());
+    shortest = shortest.next;
     result = result.next;
   }
   return rootNode.next;
@@ -59,4 +64,14 @@ console.log('empty + empty:', concat());
 console.log('n2 + empty:', concat(n2).toString());
 console.log('empty + n3:', concat(null, n3).toString());
 console.log('n2 + n3:', concat(n2, n3).toString());
+
+// input one: 11 -> 12 -> 34 -> 100
+// input two: 12 -> 13 -> 14 -> 15
+const n11 = new Node(11, new Node(12, new Node(34, new Node(100))));
+const n12 = new Node(12, new Node(13, new Node(14, new Node(15))));
+console.log('-- Output --');
+console.log('n11 + n12:', concat(n11, n12).toString());
+console.log('n12 + n11:', concat(n12, n11).toString());
+
+ 
 
